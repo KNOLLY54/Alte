@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alte by Greene - Independent Fashion</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#333333',secondary:'#F5F2EF'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            background-color: #F5F2EF;
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=Fashion%20photoshoot%20with%20two%20models%20wearing%20elegant%20traditional%20inspired%20clothing%20in%20turquoise%20and%20blue%20colors%2C%20standing%20side%20by%20side%20against%20a%20neutral%20beige%20background%2C%20modern%20fashion%20photography%20with%20minimalist%20aesthetic%2C%20high-end%20fashion%20catalog%20style&width=1200&height=800&seq=1&orientation=landscape');
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        .animate-slide-up {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .tab-button.active {
+            border-bottom: 2px solid #333;
+        }
+        .product-card {
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.02);
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .shop-now-btn {
+            transition: all 0.3s ease;
+        }
+        .shop-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="w-full px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex-1"></div>
+            <nav class="flex gap-2">
+                <button class="nav-button px-4 py-2 rounded-full text-sm border border-gray-300 hover:bg-gray-100">Shop</button>
+                <button class="nav-button px-4 py-2 rounded-full text-sm border border-gray-300 hover:bg-gray-100">About</button>
+                <button class="nav-button px-4 py-2 rounded-full text-sm border border-gray-300 hover:bg-gray-100">Contact</button>
+                <button class="nav-button px-4 py-2 rounded-full text-sm bg-black text-white !rounded-button">Shop now</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section w-full min-h-[600px] flex items-center mb-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-md animate-fade-in">
+                <h1 class="text-4xl font-bold mb-2 flex items-center">
+                    <span class="mr-2">Alte</span>
+                    <span class="text-sm">by</span>
+                    <span class="font-bold ml-2">Greene</span>
+                </h1>
+                <p class="text-lg mb-6">Shop unique fashion from independent brands</p>
+                <button class="shop-now-btn bg-black text-white px-6 py-3 rounded !rounded-button whitespace-nowrap">Shop now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-arrivals mb-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6 text-center">New Arrivals</h2>
+            
+            <div class="flex justify-center mb-8">
+                <div class="flex gap-8">
+                    <button class="tab-button active px-4 py-2 text-sm font-medium">Women</button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium">Men</button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium">Bags</button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium">Accessories</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
+                    <img src="https://readdy.ai/api/search-image?query=Elegant%20black%20poncho%20with%20geometric%20patterns%20and%20yellow%20accent%2C%20fashion%20photography%20against%20light%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=2&orientation=portrait" alt="Black Poncho" class="w-full h-full object-cover object-top rounded">
+                </div>
+                <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
+                    <img src="https://readdy.ai/api/search-image?query=Colorful%20geometric%20patterned%20tote%20bag%20with%20orange%20and%20green%20design%2C%20fashion%20photography%20against%20beige%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=3&orientation=portrait" alt="Geometric Tote Bag" class="w-full h-full object-cover object-top rounded">
+                </div>
+                <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
+                    <img src="https://readdy.ai/api/search-image?query=Woman%20wearing%20white%20top%20with%20navy%20blue%20wide-leg%20pants%20and%20navy%20hat%2C%20fashion%20photography%20against%20light%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=4&orientation=portrait" alt="Navy Pants Set" class="w-full h-full object-cover object-top rounded">
+                </div>
+                <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
+                    <img src="https://readdy.ai/api/search-image?query=Person%20wearing%20brown%20corduroy%20jumpsuit%2C%20fashion%20photography%20against%20beige%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=5&orientation=portrait" alt="Brown Jumpsuit" class="w-full h-full object-cover object-top rounded">
+                </div>
+                <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
+                    <img src="https://readdy.ai/api/search-image?query=Olive%20green%20kaftan%20dress%20with%20traditional%20embroidery%2C%20fashion%20photography%20against%20light%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=6&orientation=portrait" alt="Green Kaftan" class="w-full h-full object-cover object-top rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-sections mb-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg p-6 flex">
+                    <div class="w-1/2">
+                        <img src="https://readdy.ai/api/search-image?query=Fashion%20model%20wearing%20beige%20and%20striped%20traditional%20inspired%20dress%2C%20standing%20elegantly%20against%20neutral%20background%2C%20high-end%20fashion%20catalog%20style%2C%20minimalist%20aesthetic&width=300&height=400&seq=7&orientation=portrait" alt="New Rising Designer" class="w-full h-full object-cover object-top rounded">
+                    </div>
+                    <div class="w-1/2 p-6 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold mb-2">New rising</h3>
+                        <p class="text-sm mb-4">Ugochi creates African inspired traditional garments with a modern twist</p>
+                        <button class="bg-black text-white px-4 py-2 rounded text-sm !rounded-button whitespace-nowrap self-start">EXPLORE</button>
+                    </div>
+                </div>
+                
+                <div class="bg-transparent rounded-lg p-6 ">
+                    <!-- <h3 class="text-xl font-bold mb-4">About the movement</h3>
+                    <p class="text-sm mb-6">We're committed to uncovering and supporting underground fashion talent on our platform.</p>
+                    <p class="text-xs italic">- Our team</p> -->
+                </div> 
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-transparent rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">About the movement</h3>
+                    <p class="text-sm mb-6">We're committed to uncovering and supporting underground fashion talent on our platform.</p>
+                    <p class="text-xs italic">- Our team</p>
+                </div>
+                    <div class="bg-white rounded-lg p-6 flex">
+                       
+                        <div class="w-1/2 p-6 flex flex-col justify-center">
+                            <h3 class="text-xl font-bold mb-2">Designer Interview</h3>
+                            <p class="text-sm mb-4">Meet the minds behind the curtain, learn insights into what goes into the creative process. We're about making craftsmanship, inspiration and authenticity accessible.</p>
+                    </div>
+                    <div class="w-1/2">
+                        <img src="https://readdy.ai/api/search-image?query=Fashion%20model%20wearing%20beige%20and%20striped%20traditional%20inspired%20dress%2C%20standing%20elegantly%20against%20neutral%20background%2C%20high-end%20fashion%20catalog%20style%2C%20minimalist%20aesthetic&width=300&height=400&seq=7&orientation=portrait" alt="New Rising Designer" class="w-full h-full object-cover object-top rounded">
+                    </div>
+            </div>
+            
+            <!-- <div class="mt-6">
+                <div class="bg-white rounded-lg p-6 flex items-center">
+                    <div class="w-2/3 pr-6">
+                        <h3 class="t</div>ext-xl font-bold mb-4">Designer Interview</h3>
+                        <p class="text-sm mb-4"></p>
+                    </div>
+                    <div class="w-1/3">
+                        <img src="https://readdy.ai/</div>api/search-image?query=Fashion%20designer%20working%20with%20colorful%20fabrics%2C%20creative%20process%20in%20studio%2C%20close-up%20shot%20showing%20hands%20working%20with%20textiles%2C%20fashion%20design%20behind%20the%20scenes%2C%20neutral%20background&width=400&height=300&seq=8&orientation=landscape" alt="Designer Interview" class="w-full h-full object-cover rounded">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <footer class="pt-10 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <div class="bg-[#F0EBE6] rounded-lg p-10">
+                    <h2 class="text-3xl font-bold mb-6">We Are Changing<br>The Way Things<br>Get Made</h2>
+                    <div class="mt-16 pt-6 border-t border-gray-300">
+                        <p class="text-sm mb-4">@AltebyGreene</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-400">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-400">
+                                <i class="ri-facebook-line"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-400">
+                                <i class="ri-twitter-line"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-400">
+                                <i class="ri-linkedin-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-[#F0EBE6] rounded-lg p-6">
+                    <div class="flex flex-col h-full">
+                        <h3 class="text-lg font-bold mb-4">New Fashion Trends</h3>
+                        <div class="flex-grow">
+                            <img src="https://readdy.ai/api/search-image?query=Two%20fashion%20models%20wearing%20modern%20African-inspired%20clothing%20with%20geometric%20patterns%2C%20standing%20together%20against%20neutral%20background%2C%20high-end%20fashion%20catalog%20style%2C%20minimalist%20aesthetic&width=400&height=500&seq=9&orientation=portrait" alt="Fashion Trends" class="w-full h-full object-cover object-top rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on page load
+            const fadeElements = document.querySelectorAll('.animate-fade-in');
+            fadeElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, 300 * index);
+            });
+            
+            // Tab switching functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+            
+            // Animate elements on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.animate-slide-up');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                        element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Initial check
+        });
+    </script>
+</body>
+</html>
+
+
