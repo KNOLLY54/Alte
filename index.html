@@ -13,11 +13,11 @@
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
         body {
-            background-color: #F5F2EF;
+            background-color: beige;
             font-family: 'Inter', sans-serif;
         }
         .hero-section {
-            background-image: url('https://readdy.ai/api/search-image?query=Fashion%20photoshoot%20with%20two%20models%20wearing%20elegant%20traditional%20inspired%20clothing%20in%20turquoise%20and%20blue%20colors%2C%20standing%20side%20by%20side%20against%20a%20neutral%20beige%20background%2C%20modern%20fashion%20photography%20with%20minimalist%20aesthetic%2C%20high-end%20fashion%20catalog%20style&width=1200&height=800&seq=1&orientation=landscape');
+            background-image: url('https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745071807/Hero_1_qwqcjx.png');
             background-position: right center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -64,6 +64,30 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        /* General entrance animation */
+        .animate-entrance {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        /* Special hero entrance animation */
+        .animate-hero {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        /* Animation when elements are visible */
+        .animate-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-hero-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body>
@@ -79,9 +103,9 @@
         </div>
     </header>
 
-    <section class="hero-section w-full min-h-[600px] flex items-center mb-16">
+    <section class="hero-section w-full min-h-[600px] flex items-center mb-16 animate-hero">
         <div class="container mx-auto px-6">
-            <div class="max-w-md animate-fade-in">
+            <div class="max-w-md">
                 <h1 class="text-4xl font-bold mb-2 flex items-center">
                     <span class="mr-2">Alte</span>
                     <span class="text-sm">by</span>
@@ -93,7 +117,7 @@
         </div>
     </section>
 
-    <section class="new-arrivals mb-20">
+    <section class="new-arrivals mb-20 animate-entrance">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-6 text-center">New Arrivals</h2>
             
@@ -108,30 +132,30 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
-                    <img src="https://readdy.ai/api/search-image?query=Elegant%20black%20poncho%20with%20geometric%20patterns%20and%20yellow%20accent%2C%20fashion%20photography%20against%20light%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=2&orientation=portrait" alt="Black Poncho" class="w-full h-full object-cover object-top rounded">
+                    <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745014929/Arrival-1_ykyyfb.jpg" alt="Black Poncho" class="w-full h-full object-cover object-top rounded">
                 </div>
                 <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
-                    <img src="https://readdy.ai/api/search-image?query=Colorful%20geometric%20patterned%20tote%20bag%20with%20orange%20and%20green%20design%2C%20fashion%20photography%20against%20beige%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=3&orientation=portrait" alt="Geometric Tote Bag" class="w-full h-full object-cover object-top rounded">
+                    <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745014930/Arrival-2_mfwzwq.jpg">
                 </div>
                 <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
-                    <img src="https://readdy.ai/api/search-image?query=Woman%20wearing%20white%20top%20with%20navy%20blue%20wide-leg%20pants%20and%20navy%20hat%2C%20fashion%20photography%20against%20light%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=4&orientation=portrait" alt="Navy Pants Set" class="w-full h-full object-cover object-top rounded">
+                    <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745014932/Arrival-3_i8nxzb.jpg">
                 </div>
                 <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
-                    <img src="https://readdy.ai/api/search-image?query=Person%20wearing%20brown%20corduroy%20jumpsuit%2C%20fashion%20photography%20against%20beige%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=5&orientation=portrait" alt="Brown Jumpsuit" class="w-full h-full object-cover object-top rounded">
+                    <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745014931/Arrival-4_dxapmq.jpg" alt="Brown Jumpsuit" class="w-full h-full object-cover object-top rounded">
                 </div>
                 <div class="product-card bg-gray-100 rounded-lg p-4 aspect-[3/4] flex items-center justify-center">
-                    <img src="https://readdy.ai/api/search-image?query=Olive%20green%20kaftan%20dress%20with%20traditional%20embroidery%2C%20fashion%20photography%20against%20light%20background%2C%20minimalist%20style%2C%20high-end%20fashion%20catalog&width=300&height=400&seq=6&orientation=portrait" alt="Green Kaftan" class="w-full h-full object-cover object-top rounded">
+                    <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745014932/Arrival-5_q3lmqh.jpg" alt="Green Kaftan" class="w-full h-full object-cover object-top rounded">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="featured-sections mb-20">
+    <section class="featured-sections mb-20 animate-entrance">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-white rounded-lg p-6 flex">
                     <div class="w-1/2">
-                        <img src="https://readdy.ai/api/search-image?query=Fashion%20model%20wearing%20beige%20and%20striped%20traditional%20inspired%20dress%2C%20standing%20elegantly%20against%20neutral%20background%2C%20high-end%20fashion%20catalog%20style%2C%20minimalist%20aesthetic&width=300&height=400&seq=7&orientation=portrait" alt="New Rising Designer" class="w-full h-full object-cover object-top rounded">
+                        <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745014932/New-rising_ijarhu.jpg" class="w-full h-full object-cover object-top rounded">
                     </div>
                     <div class="w-1/2 p-6 flex flex-col justify-center">
                         <h3 class="text-xl font-bold mb-2">New rising</h3>
@@ -160,7 +184,7 @@
                             <p class="text-sm mb-4">Meet the minds behind the curtain, learn insights into what goes into the creative process. We're about making craftsmanship, inspiration and authenticity accessible.</p>
                     </div>
                     <div class="w-1/2">
-                        <img src="https://readdy.ai/api/search-image?query=Fashion%20model%20wearing%20beige%20and%20striped%20traditional%20inspired%20dress%2C%20standing%20elegantly%20against%20neutral%20background%2C%20high-end%20fashion%20catalog%20style%2C%20minimalist%20aesthetic&width=300&height=400&seq=7&orientation=portrait" alt="New Rising Designer" class="w-full h-full object-cover object-top rounded">
+                        <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/e_improve,w_300,h_400,c_thumb,g_auto/v1745014933/Designer-interview_xu3nzs.jpg" alt="New Rising Designer" class="w-full h-full object-cover object-top rounded">
                     </div>
             </div>
             
@@ -206,7 +230,7 @@
                     <div class="flex flex-col h-full">
                         <h3 class="text-lg font-bold mb-4">New Fashion Trends</h3>
                         <div class="flex-grow">
-                            <img src="https://readdy.ai/api/search-image?query=Two%20fashion%20models%20wearing%20modern%20African-inspired%20clothing%20with%20geometric%20patterns%2C%20standing%20together%20against%20neutral%20background%2C%20high-end%20fashion%20catalog%20style%2C%20minimalist%20aesthetic&width=400&height=500&seq=9&orientation=portrait" alt="Fashion Trends" class="w-full h-full object-cover object-top rounded">
+                            <img src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745014933/Footer_qbu5vx.jpg" alt="Fashion Trends" class="w-full h-full object-cover object-top rounded">
                         </div>
                     </div>
                 </div>
@@ -247,6 +271,29 @@
                 });
             };
             
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Initial check
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to handle scroll-based animations
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.animate-entrance, .animate-hero');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        if (element.classList.contains('animate-hero')) {
+                            element.classList.add('animate-hero-visible');
+                        } else {
+                            element.classList.add('animate-visible');
+                        }
+                    }
+                });
+            };
+
+            // Trigger animations on scroll
             window.addEventListener('scroll', animateOnScroll);
             animateOnScroll(); // Initial check
         });
