@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Clothing Store</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#000000',secondary:'#333333'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Space Grotesk', sans-serif;
+}
+.product-slider {
+transition: transform 0.5s ease;
+}
+.slide {
+transition: opacity 0.5s ease;
+}
+.slide:not(.active) {
+opacity: 0;
+pointer-events: none;
+position: absolute;
+}
+.slide.active {
+opacity: 1;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+appearance: textfield;
+}
+</style>
+</head>
+<body class="bg-white min-h-screen">
+<!-- Navigation -->
+<nav class="w-full py-6 px-8 flex items-center justify-between border-b border-gray-100">
+<div class="flex items-center space-x-10">
+<a href="#" class="text-gray-800 hover:text-primary transition-colors">HOME</a>
+<a href="#" class="text-gray-800 hover:text-primary transition-colors">CATALOG</a>
+<a href="#" class="text-gray-800 hover:text-primary transition-colors">CONTACT</a>
+</div>
+<h1 class="text-xl md:text-2xl lg:text-3xl" style="font-family: 'Rubik Glitch', cursive;">ALTE by GREENE</h1>
+
+<div class="flex items-center space-x-6">
+<a href="#" class="w-6 h-6 flex items-center justify-center text-gray-800 hover:text-primary transition-colors">
+<i class="ri-user-line"></i>
+</a>
+<a href="#" class="w-6 h-6 flex items-center justify-center text-gray-800 hover:text-primary transition-colors">
+<i class="ri-shopping-bag-line"></i>
+</a>
+</div>
+</nav>
+<!-- Product Showcase -->
+<div class="relative w-full overflow-hidden">
+<div class="product-slider flex">
+<!-- Product 1 -->
+<div class="slide active w-full flex flex-col md:flex-row items-center justify-between px-8 py-12 md:py-24">
+<div class="w-full md:w-1/3 mb-8 md:mb-0">
+<h1 class="text-3xl md:text-4xl font-bold tracking-wider mb-2">SPLIT ZIP JACKET USED</h1>
+<p class="text-xl mb-6">BLACK</p>
+<ul class="list-none space-y-2 text-gray-700">
+<li>• LIGHTWEIGHT BOMBER CUT</li>
+<li>• WATER-RESISTANT COATING</li>
+<li>• ADJUSTABLE HOOD</li>
+<li>• FRONT POCKETS</li>
+<li>• ELASTIC CUFFS</li>
+<li>• PREMIUM ZIPPER</li>
+<li>• ECO-FRIENDLY</li>
+</ul>
+</div>
+<div class="w-full md:w-1/3 flex justify-center relative group">
+<button class="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors opacity-0 group-hover:opacity-100 prev-slide">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<img src="https://readdy.ai/api/search-image?query=premium%20black%20bomber%20jacket%20with%20hood%2C%20minimalist%20design%2C%20high%20fashion%2C%20studio%20photography%20with%20clean%20white%20background%2C%20professional%20fashion%20photography&width=500&height=600&seq=1&orientation=portrait" alt="Split Zip Jacket" class="h-auto max-h-[600px] object-contain object-top">
+<button class="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors opacity-0 group-hover:opacity-100 next-slide">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="w-full md:w-1/3 flex flex-col items-end">
+<div class="flex items-center space-x-2 mb-8">
+<span class="w-2 h-2 bg-black rounded-full"></span>
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+</div>
+<div class="mt-auto">
+<div class="flex items-center mb-6">
+<label for="quantity" class="mr-4 text-sm">QUANTITY</label>
+<div class="flex border border-gray-200 rounded">
+<button class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition-colors">-</button>
+<input type="number" id="quantity" value="1" min="1" class="w-12 text-center border-none focus:outline-none">
+<button class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition-colors">+</button>
+</div>
+</div>
+<button class="bg-black text-white py-3 px-6 whitespace-nowrap !rounded-button hover:bg-gray-900 transition-colors">ADD TO CART - $189.00</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="slide w-full flex flex-col md:flex-row items-center justify-between px-8 py-12 md:py-24">
+<div class="w-full md:w-1/3 mb-8 md:mb-0">
+<h1 class="text-3xl md:text-4xl font-bold tracking-wider mb-2">PREMIUM DENIM JACKET</h1>
+<p class="text-xl mb-6">INDIGO WASH</p>
+<ul class="list-none space-y-2 text-gray-700">
+<li>• VINTAGE INSPIRED CUT</li>
+<li>• 100% ORGANIC COTTON</li>
+<li>• BUTTON CLOSURE</li>
+<li>• CHEST POCKETS</li>
+<li>• ADJUSTABLE CUFFS</li>
+<li>• DISTRESSED DETAILS</li>
+<li>• SUSTAINABLE PRODUCTION</li>
+</ul>
+</div>
+<div class="w-full md:w-1/3 flex justify-center relative group">
+<button class="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors opacity-0 group-hover:opacity-100 prev-slide">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<img src="https://readdy.ai/api/search-image?query=premium%20denim%20jacket%2C%20indigo%20wash%2C%20vintage%20style%2C%20studio%20photography%20with%20clean%20white%20background%2C%20professional%20fashion%20photography&width=500&height=600&seq=2&orientation=portrait" alt="Premium Denim Jacket" class="h-auto max-h-[600px] object-contain object-top">
+<button class="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors opacity-0 group-hover:opacity-100 next-slide">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="w-full md:w-1/3 flex flex-col items-end space-y-8">
+<div class="flex space-x-3">
+<button class="w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors prev-slide">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<button class="w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors next-slide">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+<span class="w-2 h-2 bg-black rounded-full"></span>
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+</div>
+<div class="mt-auto">
+<div class="flex items-center mb-6">
+<label for="quantity2" class="mr-4 text-sm">QUANTITY</label>
+<div class="flex border border-gray-200 rounded">
+<button class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition-colors">-</button>
+<input type="number" id="quantity2" value="1" min="1" class="w-12 text-center border-none focus:outline-none">
+<button class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition-colors">+</button>
+</div>
+</div>
+<button class="bg-black text-white py-3 px-6 whitespace-nowrap !rounded-button hover:bg-gray-900 transition-colors">ADD TO CART - $159.00</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="slide w-full flex flex-col md:flex-row items-center justify-between px-8 py-12 md:py-24">
+<div class="w-full md:w-1/3 mb-8 md:mb-0">
+<h1 class="text-3xl md:text-4xl font-bold tracking-wider mb-2">WOOL BLEND OVERCOAT</h1>
+<p class="text-xl mb-6">CAMEL</p>
+<ul class="list-none space-y-2 text-gray-700">
+<li>• TAILORED FIT</li>
+<li>• 70% WOOL, 30% POLYESTER</li>
+<li>• NOTCHED LAPEL</li>
+<li>• SIDE POCKETS</li>
+<li>• FULL LINING</li>
+<li>• SINGLE VENT</li>
+<li>• DRY CLEAN ONLY</li>
+</ul>
+</div>
+<div class="w-full md:w-1/3 flex justify-center relative group">
+<button class="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors opacity-0 group-hover:opacity-100 prev-slide">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<img src="https://readdy.ai/api/search-image?query=premium%20camel%20wool%20overcoat%2C%20tailored%20fit%2C%20luxury%20fashion%2C%20studio%20photography%20with%20clean%20white%20background%2C%20professional%20fashion%20photography&width=500&height=600&seq=3&orientation=portrait" alt="Wool Blend Overcoat" class="h-auto max-h-[600px] object-contain object-top">
+<button class="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors opacity-0 group-hover:opacity-100 next-slide">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="w-full md:w-1/3 flex flex-col items-end space-y-8">
+<div class="flex space-x-3">
+<button class="w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors prev-slide">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<button class="w-8 h-8 flex items-center justify-center border border-gray-200 rounded-full hover:bg-gray-100 transition-colors next-slide">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+</div>
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+<span class="w-2 h-2 bg-black rounded-full"></span>
+</div>
+<div class="mt-auto">
+<div class="flex items-center mb-6">
+<label for="quantity3" class="mr-4 text-sm">QUANTITY</label>
+<div class="flex border border-gray-200 rounded">
+<button class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition-colors">-</button>
+<input type="number" id="quantity3" value="1" min="1" class="w-12 text-center border-none focus:outline-none">
+<button class="px-3 py-1 text-gray-500 hover:bg-gray-100 transition-colors">+</button>
+</div>
+</div>
+<button class="bg-black text-white py-3 px-6 whitespace-nowrap !rounded-button hover:bg-gray-900 transition-colors">ADD TO CART - $249.00</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Details Section -->
+<div class="w-full py-16 px-8 bg-gray-50">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-2xl font-bold mb-8">PRODUCT DETAILS</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 overflow-x-auto hide-scrollbar">
+<style>
+.hide-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.hide-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+</style>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 max-h-[400px] overflow-y-auto hide-scrollbar">
+<h3 class="text-lg font-medium mb-4">DESCRIPTION</h3>
+<p class="text-gray-700 leading-relaxed">
+Our Split Zip Jacket combines modern aesthetics with functional design. Crafted from premium materials, this lightweight bomber-style jacket features water-resistant coating, making it perfect for unpredictable weather. The adjustable hood and elastic cuffs ensure a comfortable fit, while the premium zipper adds a touch of luxury.
+</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 max-h-[400px] overflow-y-auto hide-scrollbar">
+<h3 class="text-lg font-medium mb-4">MATERIAL & CARE</h3>
+<ul class="text-gray-700 space-y-2">
+<li>• Shell: 100% Polyester</li>
+<li>• Lining: 100% Recycled Polyester</li>
+<li>• Water-resistant coating</li>
+<li>• Machine wash cold</li>
+<li>• Do not bleach</li>
+<li>• Tumble dry low</li>
+<li>• Do not iron</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 max-h-[400px] overflow-y-auto hide-scrollbar">
+<h3 class="text-lg font-medium mb-4">SHIPPING & RETURNS</h3>
+<ul class="text-gray-700 space-y-2">
+<li>• Free standard shipping on all orders</li>
+<li>• Express shipping available</li>
+<li>• 30-day return policy</li>
+<li>• Free returns within the US</li>
+<li>• International shipping available</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Recommended Products -->
+<div class="w-full py-16 px-8">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-2xl font-bold mb-8">YOU MAY ALSO LIKE</h2>
+<div class="flex overflow-x-auto pb-4 gap-8 hide-scrollbar">
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20black%20t-shirt%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=4&orientation=portrait" alt="Premium T-Shirt" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">PREMIUM COTTON T-SHIRT</h3>
+<p class="text-gray-700">$49.00</p>
+</div>
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20black%20hoodie%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=5&orientation=portrait" alt="Classic Hoodie" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">CLASSIC HOODIE</h3>
+<p class="text-gray-700">$89.00</p>
+</div>
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20black%20pants%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=6&orientation=portrait" alt="Slim Fit Pants" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">SLIM FIT PANTS</h3>
+<p class="text-gray-700">$79.00</p>
+</div>
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20black%20cap%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=7&orientation=portrait" alt="Structured Cap" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">STRUCTURED CAP</h3>
+<p class="text-gray-700">$39.00</p>
+</div>
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20leather%20sneakers%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=8&orientation=portrait" alt="Premium Sneakers" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">PREMIUM LEATHER SNEAKERS</h3>
+<p class="text-gray-700">$129.00</p>
+</div>
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20leather%20wallet%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=9&orientation=portrait" alt="Leather Wallet" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">LEATHER WALLET</h3>
+<p class="text-gray-700">$69.00</p>
+</div>
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20sunglasses%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=10&orientation=portrait" alt="Designer Sunglasses" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">DESIGNER SUNGLASSES</h3>
+<p class="text-gray-700">$159.00</p>
+</div>
+<div class="group flex-none w-[300px]">
+<div class="mb-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=minimalist%20leather%20belt%2C%20premium%20quality%2C%20studio%20photography%20with%20clean%20white%20background&width=300&height=400&seq=11&orientation=portrait" alt="Premium Belt" class="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-500">
+</div>
+<h3 class="font-medium">PREMIUM LEATHER BELT</h3>
+<p class="text-gray-700">$59.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 bg-gray-50">
+<div class="max-w-6xl mx-auto flex flex-col items-center">
+    <h1 class="text-xl md:text-2xl lg:text-3xl" style="font-family: 'Rubik Glitch', cursive;">ALTE</h1>
+
+<div class="relative w-full max-w-md mb-8">
+<input type="email" placeholder="Enter your email for exclusive updates" class="w-full px-6 py-3 border border-gray-200 rounded-full focus:outline-none focus:border-primary text-sm">
+<button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black text-white px-6 py-2 !rounded-full hover:bg-gray-900 transition-colors text-sm whitespace-nowrap">JOIN US</button>
+</div>
+<div class="flex items-center space-x-6 mb-8">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-instagram-line text-gray-600"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-facebook-line text-gray-600"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-twitter-x-line text-gray-600"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-pinterest-line text-gray-600"></i>
+</a>
+</div>
+<p class="text-gray-500 text-sm">© 2025 Premium Clothing. All rights reserved.</p>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const slides = document.querySelectorAll('.slide');
+const prevButtons = document.querySelectorAll('.prev-slide');
+const nextButtons = document.querySelectorAll('.next-slide');
+const indicators = document.querySelectorAll('.flex.items-center.space-x-2');
+let currentIndex = 0;
+function showSlide(index) {
+slides.forEach(slide => slide.classList.remove('active'));
+slides[index].classList.add('active');
+// Update indicators
+indicators.forEach(indicator => {
+const dots = indicator.querySelectorAll('span');
+dots.forEach((dot, i) => {
+if (i === index) {
+dot.classList.remove('bg-gray-300');
+dot.classList.add('bg-black');
+} else {
+dot.classList.remove('bg-black');
+dot.classList.add('bg-gray-300');
+}
+});
+});
+}
+function nextSlide() {
+currentIndex = (currentIndex + 1) % slides.length;
+showSlide(currentIndex);
+}
+function prevSlide() {
+currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+showSlide(currentIndex);
+}
+// Add event listeners to navigation buttons
+prevButtons.forEach(button => {
+button.addEventListener('click', prevSlide);
+});
+nextButtons.forEach(button => {
+button.addEventListener('click', nextSlide);
+});
+// Quantity buttons
+const quantityInputs = document.querySelectorAll('input[type="number"]');
+quantityInputs.forEach(input => {
+const decreaseBtn = input.previousElementSibling;
+const increaseBtn = input.nextElementSibling;
+decreaseBtn.addEventListener('click', () => {
+const currentValue = parseInt(input.value);
+if (currentValue > 1) {
+input.value = currentValue - 1;
+}
+});
+increaseBtn.addEventListener('click', () => {
+const currentValue = parseInt(input.value);
+input.value = currentValue + 1;
+});
+});
+});
+</script>
+</body>
+</html>
