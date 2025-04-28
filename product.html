@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNTO - Fashion Store</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#000000',secondary:'#4A4A4A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+background-color: #F0E1CE;
+font-family: 'Inter', sans-serif;
+}
+.product-image {
+max-height: 500px;
+object-fit: contain;
+}
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.quantity-input {
+-moz-appearance: textfield;
+appearance: textfield;
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="bg-transparent py-4 px-6">
+<div class="container mx-auto flex justify-between items-center">
+<div class="flex items-center">
+<a href="#" class="text-primary font-[''] text-2xl">alte by</a>
+<span class="text-green-500 text-xs ml-1 mt-1">GREENE</span>
+</div>
+<div class="hidden md:flex space-x-6">
+<a href="#" class="text-primary hover:text-gray-700">Home</a>
+<a href="#" class="text-primary hover:text-gray-700">Shop</a>
+<a href="#" class="text-primary hover:text-gray-700">About</a>
+<a href="#" class="text-primary hover:text-gray-700">Contact</a>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative">
+<button class="flex items-center text-primary hover:text-gray-700">
+<span class="mr-1">Hi, User</span>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</button>
+<div class="absolute right-0 mt-2 w-48 bg-white rounded shadow-lg z-10 hidden">
+<div class="py-1">
+<a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-dashboard-line"></i>
+</div>
+My Dashboard
+</a>
+<a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-file-list-line"></i>
+</div>
+Orders
+</a>
+<a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-inbox-line"></i>
+</div>
+Inbox
+</a>
+<a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-heart-line"></i>
+</div>
+Wishlist
+</a>
+<a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-coupon-line"></i>
+</div>
+Voucher
+</a>
+<div class="border-t border-gray-200"></div>
+<a href="#" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
+Logout
+</a>
+</div>
+</div>
+</div>
+<a href="#" class="relative text-primary hover:text-gray-700">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-shopping-cart-line"></i>
+</div>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">2</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Product Section -->
+<section class="py-6 px-6">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      
+        <!-- Product Details -->
+        <div id="productDetails" class="w-full md:w-1/2 flex flex-col justify-start items-start md:pl-12 mt-8 md:mt-0 space-y-4 text-left md:pr-12">
+            <h1 id="productTitle" class="text-3xl font-bold text-primary">SPLIT ZIP HOODIE BLACK</h1>
+            <p id="productDescription" class="text-gray-700 leading-relaxed">
+                A hoodie is a casual, comfortable sweatshirt with a hood, typically made from soft, warm materials like a cotton blend. Perfect for layering in cooler weather.
+            </p>
+        </div>
+
+  <!-- Product Image -->
+        <div class="w-full md:w-1/2 relative flex flex-col items-center">
+    <img id="mainImage" src="https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354120/1000276358-removebg-preview_qkkeqg.png" alt="Split Zip Jacket USD Black" class="w-full h-auto product-image transition-opacity duration-300">
+    <!-- Navigation Arrows -->
+    <button id="prevButton" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 shadow-md">
+        <div class="w-5 h-5 flex items-center justify-center">
+            <i class="ri-arrow-left-s-line"></i>
+        </div>
+    </button>
+    <button id="nextButton" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 shadow-md">
+        <div class="w-5 h-5 flex items-center justify-center">
+            <i class="ri-arrow-right-s-line"></i>
+        </div>
+    </button>
+    <!-- Navigation Dots -->
+    <div id="dotsContainer" class="flex justify-center mt-4 space-x-2">
+        <button class="w-2 h-2 rounded-full bg-primary"></button>
+        <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+        <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+        <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+        <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+        <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+        <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+        <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+    </div>
+        </div>
+
+        <!-- Quantity Selector and Add to Cart -->
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center mt-8 md:mt-0">
+            <div class="flex border border-gray-300 rounded-button overflow-hidden mb-4">
+                <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 whitespace-nowrap">
+                    <div class="w-4 h-4 flex items-center justify-center">
+                        <i class="ri-subtract-line"></i>
+                    </div>
+                </button>
+                <input type="number" value="1" min="1" class="quantity-input w-12 text-center border-none focus:outline-none">
+                <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 whitespace-nowrap">
+                    <div class="w-4 h-4 flex items-center justify-center">
+                        <i class="ri-add-line"></i>
+                    </div>
+                </button>
+            </div>
+            <button class="px-8 py-3 bg- text-white font-medium !rounded-button hover:bg-opacity-90 flex items-center whitespace-nowrap" style="background-color: #4285F4;">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Shop By Category Section -->
+<section class="py-12 px-6 ">
+<div class="container mx-auto max-w-6xl">
+<h2 class="text-2xl font-bold text-center mb-8 text-gray-900">Shop By Category</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Men's Collection -->
+<div class="relative overflow-hidden rounded-2xl group bg-[#e5e5e5]">
+<img src="https://readdy.ai/api/search-image?query=two%20minimalist%20hoodies%20in%20beige%20and%20black%20colors%20displayed%20side%20by%20side%20on%20gray%20background%2C%20clean%20product%20photography%2C%20high-quality%20studio%20shot&width=400&height=400&seq=22&orientation=squarish" alt="Men's Collection" class="w-full h-[300px] object-cover">
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-white text-xl font-bold">Men's Collection</h3>
+</div>
+</div>
+<!-- Women's Collection -->
+<div class="relative overflow-hidden rounded-2xl group bg-[#e5e5e5]">
+<img src="https://readdy.ai/api/search-image?query=minimal%20womens%20clothing%20collection%20with%20white%20and%20black%20dresses%20hanging%20on%20wooden%20hangers%20against%20light%20gray%20wall%2C%20clean%20fashion%20photography&width=400&height=400&seq=23&orientation=squarish" alt="Women's Collection" class="w-full h-[300px] object-cover">
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-white text-xl font-bold">Women's Collection</h3>
+</div>
+</div>
+<!-- Accessories -->
+<div class="relative overflow-hidden rounded-2xl group bg-[#e5e5e5]">
+<img src="https://readdy.ai/api/search-image?query=luxury%20leather%20bags%20in%20beige%20and%20black%20colors%20with%20sunglasses%20arranged%20on%20light%20gray%20background%2C%20minimal%20product%20photography&width=400&height=400&seq=24&orientation=squarish" alt="Accessories" class="w-full h-[300px] object-cover">
+<div class="absolute inset-0 flex items-center justify-center">
+<h3 class="text-white text-xl font-bold">Accessories</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Similar Products Section -->
+<section class="py-12 px-6 ">
+<div class="container mx-auto">
+<h2 class="text-2xl font-bold mb-8 text-center">SIMILAR PRODUCTS</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="bg-white p-4 rounded-lg">
+<div class="relative mb-4">
+<div class="absolute top-2 left-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded">NEW</div>
+<img src="https://readdy.ai/api/search-image?query=back%20view%20of%20light%20gray%20minimalist%20sweatshirt%20hoodie%20on%20plain%20background%2C%20professional%20product%20photography%2C%20high-quality%2C%20clean%20studio%20shot&width=400&height=400&seq=19&orientation=squarish" alt="Minimalist Sweatshirt Hoodie" class="w-full h-[300px] object-cover rounded">
+</div>
+<h3 class="text-sm font-medium text-gray-600 mb-2">Minimalist Sweatshirt Hoodie</h3>
+<p class="text-sm font-medium">$79.00</p>
+</div>
+<!-- Product 2 -->
+<div class="bg-white p-4 rounded-lg">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=back%20view%20of%20blue%20minimalist%20sweatshirt%20hoodie%20on%20plain%20background%2C%20professional%20product%20photography%2C%20high-quality%2C%20clean%20studio%20shot&width=400&height=400&seq=20&orientation=squarish" alt="Minimalist Sweatshirt Hoodie" class="w-full h-[300px] object-cover rounded">
+</div>
+<h3 class="text-sm font-medium text-gray-600 mb-2">Minimalist Sweatshirt Hoodie</h3>
+<p class="text-sm font-medium">$79.00</p>
+</div>
+<!-- Product 3 -->
+<div class="bg-white p-4 rounded-lg">
+<div class="relative mb-4">
+<img src="https://readdy.ai/api/search-image?query=back%20view%20of%20cream%20colored%20minimalist%20sweatshirt%20hoodie%20on%20plain%20background%2C%20professional%20product%20photography%2C%20high-quality%2C%20clean%20studio%20shot&width=400&height=400&seq=21&orientation=squarish" alt="Minimalist Sweatshirt Hoodie" class="w-full h-[300px] object-cover rounded">
+</div>
+<h3 class="text-sm font-medium text-gray-600 mb-2">Minimalist Sweatshirt Hoodie</h3>
+<p class="text-sm font-medium">$79.00</p>
+</div>
+</div>
+<div class="flex justify-center mt-8">
+<a href="#" class="flex items-center text-gray-600 hover:text-gray-800">
+<span class="mr-2">See More</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- New Arrivals Section -->
+<section class="py-12 px-6">
+<div class="container mx-auto">
+<h2 class="text-2xl font-bold mb-8">New Arrivals</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- New Arrival 1 -->
+<div class="overflow-hidden rounded group">
+<img src="https://readdy.ai/api/search-image?query=fashionable%20woman%20wearing%20beige%20trench%20coat%20with%20white%20sunglasses%20and%20carrying%20a%20designer%20handbag%2C%20professional%20fashion%20photography%2C%20clean%20studio%20background%2C%20high-quality&width=450&height=650&seq=8&orientation=portrait" alt="Trench Coat" class="w-full h-[600px] object-cover transition-transform duration-300 group-hover:scale-105">
+</div>
+<!-- New Arrival 2 -->
+<div class="grid grid-rows-2 gap-8">
+<div class="overflow-hidden rounded group">
+<img src="https://readdy.ai/api/search-image?query=elegant%20black%20sunglasses%20on%20minimalist%20beige%20background%2C%20product%20photography%2C%20high-quality%2C%20fashion%20accessory&width=450&height=280&seq=9&orientation=landscape" alt="Sunglasses" class="w-full h-[290px] object-cover transition-transform duration-300 group-hover:scale-105">
+</div>
+<div class="overflow-hidden rounded group">
+<img src="https://readdy.ai/api/search-image?query=beige%20canvas%20tote%20bag%20with%20THE%20TOTE%20BAG%20text%2C%20on%20minimalist%20background%2C%20product%20photography%2C%20high-quality%2C%20fashion%20accessory&width=450&height=280&seq=10&orientation=landscape" alt="Tote Bag" class="w-full h-[290px] object-cover transition-transform duration-300 group-hover:scale-105">
+</div>
+</div>
+<!-- New Arrival 3 -->
+<div class="overflow-hidden rounded group">
+<img src="https://readdy.ai/api/search-image?query=stylish%20man%20wearing%20beige%20bomber%20jacket%20over%20white%20t-shirt%2C%20professional%20fashion%20photography%2C%20clean%20studio%20background%2C%20high-quality&width=450&height=650&seq=11&orientation=portrait" alt="Bomber Jacket" class="w-full h-[600px] object-cover transition-transform duration-300 group-hover:scale-105">
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Tagline -->
+<section class="py-12 px-6 text-center">
+<div class="container mx-auto">
+<h2 class="text-2xl font-bold mb-4">"Made different. Made better." -</h2>
+<div class="flex justify-center items-center">
+<span class="text-primary font-['Pacifico'] text-2xl">UNTO</span>
+<span class="text-green-500 text-xs ml-1 mt-1">PREMIUM</span>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white py-12 px-6">
+<div class="container mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Connect With Us -->
+<div>
+<h3 class="text-lg font-bold mb-4">CONNECT WITH US</h3>
+<p class="text-gray-600 mb-4">Stay updated with our latest collections and exclusive offers.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-facebook-fill"></i>
+</div>
+</a>
+<a href="#" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-twitter-fill"></i>
+</div>
+</a>
+<a href="#" class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-instagram-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Shop -->
+<div>
+<h3 class="text-lg font-bold mb-4">SHOP</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-600 hover:text-primary">All Products</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Best Sellers</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">New Arrivals</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Sale Items</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Collections</a></li>
+</ul>
+</div>
+<!-- About -->
+<div>
+<h3 class="text-lg font-bold mb-4">ABOUT</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-600 hover:text-primary">Our Story</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Sustainability</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Careers</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Press</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Blog</a></li>
+</ul>
+</div>
+<!-- Help -->
+<div>
+<h3 class="text-lg font-bold mb-4">HELP</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-600 hover:text-primary">Shipping & Returns</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">FAQ</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Contact Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 text-sm">
+<p>© 2025 UNTO Premium. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const images = [
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354119/1000276357-removebg-preview_jsess1.png",
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354117/1000276359-removebg-preview_fw8jqg.png",
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354120/1000276358-removebg-preview_qkkeqg.png",
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354121/1000276360-removebg-preview_fqncgq.png",
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354122/1000276361-removebg-preview_wspuvc.png",
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354120/1000276362-removebg-preview_bkhm5p.png",
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354119/1000276364-removebg-preview_wqzdws.png",
+        "https://res.cloudinary.com/dtrn8j0sz/image/upload/v1745354120/1000276363-removebg-preview_lffr6d.png"
+
+
+    ];
+
+    const productDetails = [
+        {
+            title: "PREMIUM DENIM JACKET",
+            description: "A classic denim jacket made from 100% organic cotton. Perfect for casual outings and layering."
+        },
+        {
+            title: "WOOL BLEND OVERCOAT",
+            description: "A tailored overcoat crafted from a premium wool blend. Ideal for formal occasions and cold weather."
+        },
+        {
+            title: "SPLIT ZIP HOODIE BLACK",
+            description: "A hoodie is a casual, comfortable sweatshirt with a hood, typically made from soft, warm materials like a cotton blend. Perfect for layering in cooler weather."
+        },
+        {
+            title: "PREMIUM COTTON T-SHIRT",
+            description: "A sleek leather jacket with a minimalist design. Made from high-quality leather for durability and style."
+        },
+        {
+            title: "PREMIUM LEATHER JACKET",
+            description: "A sleek leather jacket with a minimalist design. Made from high-quality leather for durability and style."
+        },
+        {
+            title: "SLIM FIT PANTS",
+            description: "A sleek leather jacket with a minimalist design. Made from high-quality leather for durability and style."
+        },
+        {
+            title: "PREMIUM LEATHER SNEAKERS",
+            description: "A sleek leather jacket with a minimalist design. Made from high-quality leather for durability and style."
+        },
+        {
+            title: "STRUCTURED CAP",
+            description: "A sleek leather jacket with a minimalist design. Made from high-quality leather for durability and style."
+        }
+    ];
+
+    let currentImageIndex = 0;
+    const mainImage = document.getElementById('mainImage');
+    const productTitle = document.getElementById('productTitle');
+    const productDescription = document.getElementById('productDescription');
+    const nextButton = document.getElementById('nextButton');
+    const prevButton = document.getElementById('prevButton');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const dots = dotsContainer.getElementsByTagName('button');
+
+    function updateContent(index) {
+        // Update image
+        mainImage.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        mainImage.style.opacity = '0';
+        mainImage.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            mainImage.src = images[index];
+            mainImage.style.opacity = '1';
+            mainImage.style.transform = 'scale(1)';
+        }, 300);
+
+        // Update product details with smooth transition
+        productTitle.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        productDescription.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+
+        productTitle.style.opacity = '0';
+        productTitle.style.transform = 'translateY(-10px)';
+        productDescription.style.opacity = '0';
+        productDescription.style.transform = 'translateY(-10px)';
+
+        setTimeout(() => {
+            productTitle.textContent = productDetails[index].title;
+            productDescription.textContent = productDetails[index].description;
+
+            productTitle.style.opacity = '1';
+            productTitle.style.transform = 'translateY(0)';
+            productDescription.style.opacity = '1';
+            productDescription.style.transform = 'translateY(0)';
+        }, 300);
+
+        // Update dots
+        Array.from(dots).forEach((dot, i) => {
+            dot.className = `w-2 h-2 rounded-full ${i === index ? 'bg-primary' : 'bg-gray-300'}`;
+        });
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateContent(currentImageIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateContent(currentImageIndex);
+    });
+
+    Array.from(dots).forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentImageIndex = index;
+            updateContent(currentImageIndex);
+        });
+    });
+
+    // Initialize content
+    updateContent(currentImageIndex);
+
+    // User dropdown toggle
+    const userButton = document.querySelector('button.flex.items-center.text-primary');
+    const userDropdown = document.querySelector('.absolute.right-0.mt-2.w-48');
+    if (userButton && userDropdown) {
+        userButton.addEventListener('click', function() {
+            userDropdown.classList.toggle('hidden');
+        });
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!userButton.contains(event.target) && !userDropdown.contains(event.target)) {
+                userDropdown.classList.add('hidden');
+            }
+        });
+    }
+    // Quantity input functionality
+    const minusBtn = document.querySelector('.ri-subtract-line').parentElement.parentElement;
+    const plusBtn = document.querySelector('.ri-add-line').parentElement.parentElement;
+    const quantityInput = document.querySelector('.quantity-input');
+    if (minusBtn && plusBtn && quantityInput) {
+        minusBtn.addEventListener('click', function() {
+            const currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+        plusBtn.addEventListener('click', function() {
+            const currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+    }
+});
+</script>
+</body>
+</html>
